@@ -27,10 +27,10 @@ Code for this project should be put in `$UPRJDIR` with the following structure:
 
 ```python
 $UPRJDIR
-	├── DIGA
-			├── ...
-			├── Readme.md
-			├── ...
+    ├── DIGA
+            ├── ...
+            ├── Readme.md
+            ├── ...
 ```
 
 Then you can use `cd $UPRJDIR/DIGA` to get in the project directory.
@@ -46,13 +46,13 @@ The environment variable `$UDATADIR` setted in last step would be used to locate
 
 ```python
 $UDATADIR
-	├── GTA5 # (GTA5 in paper)
-	├── synthia # (Synthia in paper)
-	├── Cityscapes # (CityScapes in paper)
-	├── BDD # (BDD100K in paper)
-	├── IDD # (IDD in paper)
-	├── NTHU # (CrossCity in paper)
-	├── Mapillary # (Mapillary in paper)
+    ├── GTA5 # (GTA5 in paper)
+    ├── synthia # (Synthia in paper)
+    ├── Cityscapes # (CityScapes in paper)
+    ├── BDD # (BDD100K in paper)
+    ├── IDD # (IDD in paper)
+    ├── NTHU # (CrossCity in paper)
+    ├── Mapillary # (Mapillary in paper)
 ```
 
 In most dataset folders, there is one folder called “**advent_list**”, which contains the list for training, validation, testing set [following implementation in [ADVENT](https://github.com/valeoai/ADVENT)]. 
@@ -70,27 +70,27 @@ Now, the structure should look like this:
 
 ```python
 $UDATADIR
-	├── GTA5 # (GTA5 in paper)
-	│   ├── advent_list
-	│   ├── ...
-	├── synthia # (Synthia in paper)
-	│   ├── ...
-	│   ├── ...
-	├── Cityscapes # (CityScapes in paper)
-	│   ├── advent_list
-	│   ├── ...
-	├── BDD # (BDD100K in paper)
-	│   ├── advent_list
-	│   ├── ...
-	├── IDD # (IDD in paper)
-	│   ├── ...
-	│   ├── ...
-	├── NTHU # (CrossCity in paper)
-	│   ├── advent_list
-	│   ├── ...
-	├── Mapillary # (Mapillary in paper)
-	│   ├── advent_list
-	│   ├── ...
+    ├── GTA5 # (GTA5 in paper)
+    │   ├── advent_list
+    │   ├── ...
+    ├── synthia # (Synthia in paper)
+    │   ├── ...
+    │   ├── ...
+    ├── Cityscapes # (CityScapes in paper)
+    │   ├── advent_list
+    │   ├── ...
+    ├── BDD # (BDD100K in paper)
+    │   ├── advent_list
+    │   ├── ...
+    ├── IDD # (IDD in paper)
+    │   ├── ...
+    │   ├── ...
+    ├── NTHU # (CrossCity in paper)
+    │   ├── advent_list
+    │   ├── ...
+    ├── Mapillary # (Mapillary in paper)
+    │   ├── advent_list
+    │   ├── ...
 ```
 
 The next step is downloading each dataset. It would cost too much space to offer instructions about downloading and there are many tutorial online. Instead, we offer an illustration as follows about the final dataset structure. You can download the datasets and organize them like follows. Some instructions can be find here ([link1](https://github.com/wasidennis/AdaptSegNet), [link2](https://github.com/valeoai/ADVENT))
@@ -147,12 +147,12 @@ ps. We use consistent models from previous work of this repo [link](https://gith
 ```python
 $UDATADIR
 ├── models # create a new folder called "models" under $UDATADIR 
-	├── DA_Seg_models # downloaded from above link
-		├── GTA5
-		├── GTA5_baseline.pth
-		├── SYNTHIA
-		├── SYNTHIA_source.pth
-		├── ...
+    ├── DA_Seg_models # downloaded from above link
+        ├── GTA5
+        ├── GTA5_baseline.pth
+        ├── SYNTHIA
+        ├── SYNTHIA_source.pth
+        ├── ...
 ├── ...
 ├── BDD
 ```
@@ -198,8 +198,8 @@ Dockerfile is at .devcontainer/Dockerfile
 
 ```python
 pip install \
-	tensorboard
-	pandas \
+    tensorboard
+    pandas \
     opencv-python \
     pytorch-lightning \
     hydra-core \
@@ -251,14 +251,14 @@ You can use the following to start an experiment with custom `source model`, `ta
 ```python
 # e.g.
 python src/train.py \
-	experiment=ttda \
-	model/net=gta5_source \
-	datamodule/test_list=cityscapes \
-	model.cfg.bn_lambda=0.8 \
-	model.cfg.proto_lambda=0.8 \
-	model.cfg.fusion_lambda=0.8 \
-	model.cfg.confidence_threshold=0.9 \
-	model.cfg.proto_rho=0.1
+    experiment=ttda \
+    model/net=gta5_source \
+    datamodule/test_list=cityscapes \
+    model.cfg.bn_lambda=0.8 \
+    model.cfg.proto_lambda=0.8 \
+    model.cfg.fusion_lambda=0.8 \
+    model.cfg.confidence_threshold=0.9 \
+    model.cfg.proto_rho=0.1
 ```
 
 The available choices are listed as following:

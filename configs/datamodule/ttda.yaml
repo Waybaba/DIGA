@@ -1,0 +1,33 @@
+defaults:
+  # - test_list: cityscapes # idd # crosscity # cityscapes # mapillary # cityscapes, bdd, mapillary
+  - test_list: cityscapes
+_target_: src.datamodules.ttda_datamodule.Sim2RealSegmentationDataModule
+data_dir: ${paths.data_dir}
+batch_size: 1 # 64
+num_workers: ${oc.decode:${oc.env:NUM_WORKERS}}
+pin_memory: False
+train_list: # ! not used
+  - _target_: src.datamodules.ttda_datamodule.CityscapesDataSet
+    _partial_: True
+    set: train 
+val_list: # ! not used
+  - _target_: src.datamodules.ttda_datamodule.CityscapesDataSet 
+    _partial_: True
+    set: val
+# test_list:
+#   # - _target_: src.datamodules.ttda_datamodule.GTA5DataSet
+#   #   _partial_: True
+#   #   set: test
+#   # - _target_: src.datamodules.ttda_datamodule.CityscapesDataSet
+#   #   _partial_: True
+#   #   set: train # val
+#   # - _target_: src.datamodules.ttda_datamodule.CityscapesDataSet
+#   #   _partial_: True
+#   #   set: val # val
+#   # - _target_: src.datamodules.ttda_datamodule.GTA5DataSet
+#   # - _target_: src.datamodules.ttda_datamodule.CityscapesDataSet
+#   - _target_: src.datamodules.ttda_datamodule.BDD100KDataSet
+#   # - _target_: src.datamodules.ttda_datamodule.MapillaryDataSet
+#     _partial_: True
+#     set: val # val
+    

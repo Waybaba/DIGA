@@ -1,0 +1,7 @@
+defaults:
+  - submitit_slurm.yaml
+account: "${oc.env:SLURM_ACCOUNT_CINECA}"
+gres: "gpu:1"
+partition: "m100_usr_prod"
+additional_parameters:
+  time: "00-3:00"

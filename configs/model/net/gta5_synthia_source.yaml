@@ -1,0 +1,4 @@
+  _target_: src.models.ttda_module.DeepLabv2AdaptSeg
+  _partial_: true
+  multi_level: true
+  restore_from: ${paths.data_dir}/models/MaxSquareLoss/log/gta5_synthia_pretrain_class19_Oct30_1/gta5+synthiabest.pth

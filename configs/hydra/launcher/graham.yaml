@@ -1,0 +1,4 @@
+defaults:
+  - submitit_slurm.yaml
+account: "${oc.env:SLURM_ACCOUNT_CC}"
+gres: "gpu:p100:1"

@@ -1,0 +1,4 @@
+defaults:
+  - gpu.yaml
+fast_dev_run: 7
+# log_every_n_steps: 1 # ! note that fast_dev_run model wont save log, checkpoint, etc.

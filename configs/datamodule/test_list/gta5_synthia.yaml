@@ -1,0 +1,9 @@
+  - _target_: src.datamodules.ttda_datamodule.MultiInOneDataset
+    _partial_: True
+    dataset_list: 
+      - _target_: src.datamodules.ttda_datamodule.GTA5DataSet
+        _partial_: True
+        set: train
+      - _target_: src.datamodules.ttda_datamodule.SynthiaDataset
+        _partial_: True
+        set: train

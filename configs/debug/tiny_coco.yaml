@@ -1,0 +1,15 @@
+# @package _global_
+
+defaults:
+  - default.yaml
+
+datamodule:
+  batch_size: 8
+  prepare_config:
+    source_name: coco-tiny
+    slice_size: 300
+
+
+trainer:
+  log_every_n_steps: 1
+

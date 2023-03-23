@@ -1,0 +1,4 @@
+  _target_: src.models.ttda_module.DeepLabv2AdaptSeg
+  _partial_: true
+  multi_level: true
+  restore_from: ${paths.data_dir}/models/DA_Seg_models/SYNTHIA/SYNTHIA_source.pth

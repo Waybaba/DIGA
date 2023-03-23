@@ -1,0 +1,3 @@
+- _target_: src.datamodules.ttda_datamodule.CityscapesDataSet
+  _partial_: True
+  set: val # val

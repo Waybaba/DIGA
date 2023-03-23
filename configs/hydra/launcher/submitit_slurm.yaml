@@ -1,0 +1,28 @@
+_target_: hydra_plugins.hydra_submitit_launcher.submitit_launcher.SlurmLauncher
+submitit_folder: ${hydra.sweep.dir}/.submitit/%j
+# timeout_min: 00 
+cpus_per_task: 6
+# gpus_per_node: null
+tasks_per_node: 1
+mem_gb: 16
+nodes: 1
+name: ${task_name}
+partition: null
+qos: null
+comment: null
+constraint: null
+exclude: null
+gres: "gpu:a100:1"
+cpus_per_gpu: null # must be null, otherweise will cause error on cc
+# gpus_per_task: null
+mem_per_gpu: null
+mem_per_cpu: null
+account: "${oc.env:SLURM_ACCOUNT}"
+signal_delay_s: 120
+# max_num_timeout: 3:00
+additional_parameters:
+  mail-user: "${oc.env:EMAIL}"
+  mail-type: "BEGIN,END,FAIL,ALL,REQUEUE"
+  time: "00-3:00"
+array_parallelism: 512
+setup: null

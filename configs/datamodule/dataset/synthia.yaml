@@ -1,0 +1,6 @@
+_target_: src.datamodules.ttda_datamodule.GTA5DataSet
+_target_: src.datamodules.ttda_datamodule.CityscapesDataSet
+_target_: src.datamodules.ttda_datamodule.BDD100KDataSet
+_target_: src.datamodules.ttda_datamodule.MapillaryDataSet
+_partial_: True
+set: val # val

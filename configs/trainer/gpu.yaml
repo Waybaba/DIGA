@@ -1,0 +1,5 @@
+defaults:
+  - default.yaml
+
+accelerator: gpu
+devices: 1 # use one as this is most efficient for single GPU

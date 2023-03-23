@@ -1,0 +1,3 @@
+- _target_: src.datamodules.ttda_datamodule.MapillaryDataSet
+  _partial_: True
+  set: small # val

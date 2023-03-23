@@ -1,0 +1,10 @@
+# @package _global_
+
+# runs 1 train, 1 validation and 1 test step
+
+defaults:
+  - default.yaml
+
+trainer:
+  fast_dev_run: true
+  log_every_n_steps: 1

@@ -1,0 +1,47 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /datamodule: ttda.yaml
+  - override /model: diga.yaml
+  - override /callbacks: mt.yaml # TODO
+  - override /trainer: gpu.yaml
+  - override /logger: wandb.yaml
+  # - override /logger: null
+  - _self_
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["ttda", "coding"]
+task_name: "test-time-DA"
+# seed: 55555
+
+trainer:
+  min_epochs: 1
+  max_epochs: 1
+  # gradient_clip_val: 0.5
+  log_every_n_steps: 5
+  num_sanity_val_steps: 0
+  # inference_mode: False
+# model:
+#   optimizer:
+#     lr: 0.002
+#   net:
+#     lin1_size: 128
+#     lin2_size: 256
+#     lin3_size: 64
+
+# datamodule:
+#   batch_size: 64
+# set False to skip model training
+train: False
+
+# evaluate on test set, using best model weights achieved during training
+# lightning chooses best weights based on the metric specified in checkpoint callback
+test: True
+
+# logger:
+#   wandb:

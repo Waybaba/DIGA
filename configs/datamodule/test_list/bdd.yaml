@@ -1,0 +1,3 @@
+  - _target_: src.datamodules.ttda_datamodule.BDD100KDataSet
+    _partial_: True
+    set: val # val

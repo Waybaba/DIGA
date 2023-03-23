@@ -1,0 +1,31 @@
+defaults:
+  - net: gta5_source
+  # - net: synthia_source
+  # - net: gta5_source_plus
+  # - net: cityscapes
+  # - net: vgg_gta5
+  # - net: maxsquareCityscape
+_target_: src.models.ttda_module.TTDABasicModule # TODO
+exp_type: "each_shift_reset" # whether reset the model after each val set. "continual" or "each_shift_reset"
+# exp_type: "continual"
+tt_optimizer:
+  _target_: torch.optim.SGD
+  _partial_: true
+  lr: 2.5e-4
+  weight_decay: 1e-4
+  momentum: 0.9 # TODO only bn layer
+# net: synthia_source
+  # # _target_: src.models.ttda_module.DeepLabv2 # DeepLabv2MaxSquare
+  # _target_: src.models.ttda_module.DeepLabv2AdaptSeg
+  # _partial_: true
+  # multi_level: true
+  # # restore_from: ${paths.data_dir}/models/DeepLab_resnet_pretrained_imagenet.pth
+  # # restore_from: ${paths.data_dir}/models/lightningmodule_test.ckpt # also support lightning checkpoint
+  # # restore_from: ${paths.data_dir}/models/DA_Seg_models/GTA5/GTA2Cityscapes_multi-ed35151c.pth
+  # # restore_from: ${paths.data_dir}/models/DA_Seg_models/GTA5/GTA5_multi.pth
+  # # restore_from: ${paths.data_dir}/models/DA_Seg_models/GTA5/GTA5_baseline.pth
+  # # restore_from: ${paths.data_dir}/models/DA_Seg_models/GTA5/GTA5_source.pth
+  # restore_from: ${paths.data_dir}/models/DA_Seg_models/SYNTHIA/SYNTHIA_source.pth
+  # # restore_from: ${paths.data_dir}/models/GTA5_source.pth
+  # # input_size: [3, 224, 224]
+  # # output_size: 80 # TODO auto-detect this from the dataset; match the index when test across dataset as class name will be shuffle

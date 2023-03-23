@@ -1,0 +1,3 @@
+_target_: src.datamodules.ttda_datamodule.GTA5DataSet
+_partial_: True
+set: val # val

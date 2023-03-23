@@ -1,0 +1,4 @@
+defaults:
+  - default.yaml
+
+early_stopping: null

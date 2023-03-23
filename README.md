@@ -147,12 +147,12 @@ ps. We use consistent models from previous work of this repo [link](https://gith
 ```python
 $UDATADIR
 ├── models # create a new folder called "models" under $UDATADIR 
-		├── DA_Seg_models # downloaded from above link
-				├── GTA5
-						├── GTA5_baseline.pth
-				├── SYNTHIA
-						├── SYNTHIA_source.pth
-				├── ...
+	├── DA_Seg_models # downloaded from above link
+		├── GTA5
+		├── GTA5_baseline.pth
+		├── SYNTHIA
+		├── SYNTHIA_source.pth
+		├── ...
 ├── ...
 ├── BDD
 ```
@@ -198,8 +198,8 @@ Dockerfile is at .devcontainer/Dockerfile
 
 ```python
 pip install \
-		tensorboard
-		pandas \
+	tensorboard
+	pandas \
     opencv-python \
     pytorch-lightning \
     hydra-core \
